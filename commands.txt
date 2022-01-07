@@ -1,0 +1,12 @@
+Start docker:
+    - docker compose up -d --build
+
+Stop docker:
+    - docker compose stop
+
+View all docker containers:
+    - docker ps
+
+Run command in container (for example container=php-apache-morph):
+    - docker exec -ti php-apache-morph bash
+    - exit
