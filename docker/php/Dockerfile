@@ -8,3 +8,6 @@ RUN apt-get update && apt-get upgrade -y
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
+# add zip
+RUN apt install zip unzip

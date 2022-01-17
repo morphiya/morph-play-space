@@ -8,7 +8,8 @@ services:
     depends_on:
       - db-morph
     volumes:
-      - ./app/:/var/www/html/
+      - ./app/public:/var/www/html/
+      - ./app/:/var/www/
       - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
     ports:
       - 8000:80
