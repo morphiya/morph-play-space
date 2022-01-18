@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y
 # add xdebuger
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
-# Install system dependencies
+# Install system depengit dencies
 RUN apt-get update && apt-get install -y \
     git \
     curl \
