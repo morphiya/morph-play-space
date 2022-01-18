@@ -8,8 +8,8 @@ services:
     depends_on:
       - db-morph
     volumes:
-      - ./app/public:/var/www/html/
       - ./app/:/var/www/
+      - ./app/public:/var/www/html/
       - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
     ports:
       - 8000:80
@@ -37,3 +37,17 @@ services:
       PMA_HOST: db-morph
     depends_on:
       - db-morph
+
+  #Laravel App
+  app:
+    build:
+      args:
+        user: morph
+        uid: 1000
+      context: ./docker/php
+      dockerfile: Dockerfile
+    image: laravel-app
+    restart: unless-stopped
+    working_dir: /var/www/html/
+    volumes:
+      - ./app/:/var/www/html/

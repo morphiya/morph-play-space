@@ -1,0 +1,8 @@
+docker exec -ti morph-play-space_app_1 bash
+cd storage
+mkdir -pv framework/views app framework/sessions framework/cache
+cd ..
+chmod 777 -R storage
+chown -R www-data:www-data storage
+chmod -R 755 storage
+chmod -R 755 bootstrap/cache
